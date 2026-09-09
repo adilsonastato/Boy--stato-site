@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel — Boy Ástato</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><a class="logo" href="/">BOY ÁSTATO</a></header>
+<main class="admin">
+<section id="login">
+<h1>Painel de Administração</h1>
+<input id="password" type="password" placeholder="Senha">
+<button class="btn" onclick="login()">Entrar</button>
+<p id="login-msg"></p>
+</section>
+
+<section id="panel" hidden>
+<h1>Gestão do site</h1>
+<button onclick="logout()">Sair</button>
+
+<div class="admin-box">
+<h2>Adicionar música</h2>
+<input id="mtitle" placeholder="Título">
+<input id="murl" placeholder="Link da música">
+<input id="mcover" placeholder="Link da capa (opcional)">
+<button class="btn" onclick="addMusic()">Adicionar</button>
+</div>
+
+<div class="admin-box">
+<h2>Adicionar vídeo</h2>
+<input id="vtitle" placeholder="Título">
+<input id="vurl" placeholder="Link do YouTube">
+<button class="btn" onclick="addVideo()">Adicionar</button>
+</div>
+
+<h2>Conteúdo atual</h2>
+<div id="items"></div>
+</section>
+</main>
+<script src="/admin.js"></script>
+</body>
+</html>
