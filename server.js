@@ -33,7 +33,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: { httpOnly: true, sameSite: "lax", secure: false, maxAge: 86400000 }
 }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 function adminOnly(req, res, next) {
   if (req.session && req.session.admin) return next();
