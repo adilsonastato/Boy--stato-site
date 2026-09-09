@@ -35,6 +35,10 @@ app.use(session({
 }));
 app.use(express.static(__dirname));
 
+app.get("/admin", (req, res) => {
+  res.sendFile(path.join(__dirname, "admin.html"));
+});
+
 function adminOnly(req, res, next) {
   if (req.session && req.session.admin) return next();
   res.status(401).json({ error: "Não autenticado." });
