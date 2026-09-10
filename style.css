@@ -1,1 +1,464 @@
-*{box-sizing:border-box}body{margin:0;background:#090909;color:#eee;font-family:Arial,sans-serif}header{height:70px;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}.logo{color:#fff;text-decoration:none;font-weight:900;letter-spacing:2px}.admin-link{color:#aaa;text-decoration:none}.hero{min-height:75vh;display:flex;align-items:center;padding:8%;background:radial-gradient(circle at 70% 40%,#5d0000,transparent 35%),linear-gradient(120deg,#080808,#160000)}.tag{letter-spacing:4px;color:#aaa}.hero h1{font-size:clamp(60px,11vw,140px);line-height:.8;margin:20px 0;font-weight:900}.hero h1 span{color:#d40000}section:not(.hero){padding:70px 7%}h2{font-size:42px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}article,.admin-box{background:#151515;border:1px solid #292929;border-radius:16px;padding:24px}.btn,button{display:inline-block;background:#c00;color:white;border:0;border-radius:8px;padding:12px 18px;text-decoration:none;cursor:pointer;margin-top:10px}.admin{max-width:900px;margin:auto}.admin input{display:block;width:100%;padding:14px;margin:10px 0;background:#111;border:1px solid #333;color:white;border-radius:8px}.admin-box{margin:25px 0}footer{text-align:center;padding:35px;border-top:1px solid #222;color:#777}@media(max-width:600px){.hero{min-height:65vh}.hero h1{font-size:70px}h2{font-size:32px}}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #070707;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 72px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(7, 7, 7, 0.92);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+.logo span {
+  color: #d40000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.admin-link {
+  border: 1px solid #333;
+  padding: 9px 15px;
+  border-radius: 8px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      rgba(150, 0, 0, 0.35),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(90, 0, 0, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      120deg,
+      #050505,
+      #120000,
+      #050505
+    );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  right: -180px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: #a00000;
+  opacity: 0.08;
+
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.tag {
+  margin: 0 0 25px;
+  letter-spacing: 5px;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(70px, 13vw, 170px);
+  line-height: 0.82;
+  margin: 0 0 35px;
+  font-weight: 900;
+  letter-spacing: -5px;
+}
+
+.hero h1 span {
+  color: #d40000;
+}
+
+.hero-text {
+  max-width: 560px;
+  color: #aaa;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn,
+button {
+  display: inline-block;
+
+  background: #c90000;
+  color: #fff;
+
+  border: 0;
+  border-radius: 9px;
+
+  padding: 13px 21px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn:hover,
+button:hover {
+  background: #ed0000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200, 0, 0, 0.25);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid #444;
+}
+
+.btn.secondary:hover {
+  background: #151515;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+  padding: 100px 7%;
+}
+
+.section-title {
+  margin-bottom: 45px;
+}
+
+.mini-title {
+  color: #d40000;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  margin: 0 0 10px;
+  font-weight: 900;
+}
+
+.section-title > p:last-child {
+  color: #777;
+}
+
+.videos-section {
+  background: #0b0b0b;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =========================
+   CARTÕES
+========================= */
+
+article,
+.admin-box {
+  background:
+    linear-gradient(
+      145deg,
+      #181818,
+      #0e0e0e
+    );
+
+  border: 1px solid #292929;
+  border-radius: 18px;
+
+  padding: 24px;
+
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  border-color: #550000;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+
+/* =========================
+   IMAGENS DAS MÚSICAS
+========================= */
+
+article img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+  margin-bottom: 15px;
+
+  display: block;
+}
+
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+
+.admin {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 7%;
+}
+
+.admin input {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px 15px;
+  margin: 10px 0;
+
+  background: #0d0d0d;
+  border: 1px solid #333;
+
+  color: #fff;
+
+  border-radius: 9px;
+
+  outline: none;
+}
+
+.admin input:focus {
+  border-color: #b00000;
+  box-shadow: 0 0 0 3px rgba(180, 0, 0, 0.12);
+}
+
+
+/* =========================
+   LISTA DO PAINEL
+========================= */
+
+.content-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  background: #101010;
+  border: 1px solid #242424;
+
+  border-radius: 10px;
+}
+
+.content-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.content-item small {
+  color: #777;
+}
+
+.content-item button {
+  background: #7d0000;
+  padding: 8px 12px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 60px 20px;
+
+  border-top: 1px solid #222;
+
+  color: #777;
+}
+
+.footer-logo {
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.copyright {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #555;
+}
+
+
+/* =========================
+   TELEMÓVEL
+========================= */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    height: 64px;
+    padding: 0 5%;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a:not(.admin-link) {
+    display: none;
+  }
+
+  .admin-link {
+    font-size: 12px;
+    padding: 8px 11px;
+  }
+
+  .hero {
+    min-height: 78vh;
+    padding: 12% 7%;
+  }
+
+  .hero h1 {
+    font-size: 72px;
+    letter-spacing: -3px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 70px 7%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-item {
+    align-items: flex-start;
+  }
+
+  .content-item button {
+    flex-shrink: 0;
+  }
+}
