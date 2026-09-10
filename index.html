@@ -1,34 +1,153 @@
 <!doctype html>
 <html lang="pt">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Boy Ástato — Artista</title>
-<meta name="description" content="Site oficial de Boy Ástato — música, vídeos e novidades.">
-<link rel="stylesheet" href="/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Boy Ástato — Site Oficial</title>
+
+  <meta
+    name="description"
+    content="Site oficial de Boy Ástato — músicas, vídeos, lançamentos e novidades."
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-<header>
-  <a class="logo" href="/">BOY ÁSTATO</a>
-  <a class="admin-link" href="/admin">Painel</a>
-</header>
-<main>
-<section class="hero">
-  <div>
-    <p class="tag">ARTISTA • MÚSICA • VÍDEOS</p>
-    <h1>BOY<br><span>ÁSTATO</span></h1>
-    <p>Bem-vindo ao espaço oficial. Descobre músicas, vídeos e novidades.</p>
-    <a class="btn" href="#music">Ouvir músicas</a>
-  </div>
-</section>
-<section id="music">
-<h2>Músicas</h2><div id="music-list" class="grid"></div>
-</section>
-<section id="videos">
-<h2>Vídeos</h2><div id="video-list" class="grid"></div>
-</section>
-</main>
-<footer>© 2026 Boy Ástato</footer>
-<script src="/app.js"></script>
+
+  <!-- CABEÇALHO -->
+  <header class="topbar">
+
+    <a class="logo" href="/">
+      BOY <span>ÁSTATO</span>
+    </a>
+
+    <nav>
+      <a href="#music">Músicas</a>
+      <a href="#videos">Vídeos</a>
+      <a class="admin-link" href="/admin">Painel</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="tag">
+          ARTISTA • MÚSICA • VÍDEOS
+        </p>
+
+        <h1>
+          BOY
+          <span>ÁSTATO</span>
+        </h1>
+
+        <p class="hero-text">
+          Bem-vindo ao site oficial de Boy Ástato.
+          Ouve as músicas, assiste aos vídeos
+          e acompanha os próximos lançamentos.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a class="btn" href="#music">
+            🎵 Ouvir músicas
+          </a>
+
+          <a class="btn secondary" href="#videos">
+            ▶ Ver vídeos
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MÚSICAS -->
+    <section id="music" class="section">
+
+      <div class="section-title">
+
+        <p class="mini-title">
+          LANÇAMENTOS
+        </p>
+
+        <h2>
+          Músicas
+        </h2>
+
+        <p>
+          Escuta os lançamentos de Boy Ástato.
+        </p>
+
+      </div>
+
+      <div
+        id="music-list"
+        class="grid"
+      ></div>
+
+    </section>
+
+
+    <!-- VÍDEOS -->
+    <section id="videos" class="section videos-section">
+
+      <div class="section-title">
+
+        <p class="mini-title">
+          CONTEÚDO
+        </p>
+
+        <h2>
+          Vídeos
+        </h2>
+
+        <p>
+          Assiste aos vídeos e acompanha o trabalho do artista.
+        </p>
+
+      </div>
+
+      <div
+        id="video-list"
+        class="grid"
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- RODAPÉ -->
+  <footer>
+
+    <div class="footer-logo">
+      BOY ÁSTATO
+    </div>
+
+    <p>
+      Site oficial de Boy Ástato
+    </p>
+
+    <p class="copyright">
+      © 2026 Boy Ástato. Todos os direitos reservados.
+    </p>
+
+  </footer>
+
+
+  <script src="/app.js"></script>
+
 </body>
 </html>
